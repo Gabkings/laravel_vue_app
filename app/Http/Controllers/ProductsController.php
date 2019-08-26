@@ -8,6 +8,10 @@ use Validator;
 
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api')->except(['allProducts']);
+    }
     private function notFoundMessage()
     {
         return [

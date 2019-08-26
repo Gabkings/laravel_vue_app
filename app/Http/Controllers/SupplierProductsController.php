@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use Validator;
 class SupplierProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api')->except(['allSupplier_products']);
+    }
     private function notFoundMessage()
     {
         return [
@@ -66,7 +70,7 @@ class SupplierProductsController extends Controller
 
     }
 
-    public function getOneOrder($id){
+    public function oneProduct($id){
         $supplier_products = Supplier_products::find($id);
         if($supplier_products){
             $response = $this->successfulMessage(200, 'Successfully', true, $supplier_products->count(), $supplier_products);
