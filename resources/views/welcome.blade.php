@@ -15,9 +15,8 @@
     </head>
     <body>
         <div id="app">
-            <navbar></navbar>
             <div class="container">
-                <order_details></order_details>
+                <App></App>
             </div>
         </div>
 
