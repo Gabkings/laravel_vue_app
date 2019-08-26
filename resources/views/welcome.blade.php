@@ -17,7 +17,7 @@
         <div id="app">
             <navbar></navbar>
             <div class="container">
-                <products></products>
+                <order_details></order_details>
             </div>
         </div>
 

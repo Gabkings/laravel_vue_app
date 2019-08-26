@@ -22,6 +22,19 @@ Route::get('v2/suppliers/softdeleted','SuppliersController@softDeleted');
 Route::patch('/v1/suppliers/restore/{id}','SuppliersController@restore');
 Route::delete('v1/suppliers/{id}','SuppliersController@permanentDeleteSoftDeleted');
 
+//supply products routes
+
+Route::post('/v1/supply_products', 'SupplierProductsController@create');
+Route::put('/v1/supply_products/{id}', 'SupplierProductsControllerr@create');
+Route::get('/v1/supply_products', 'SupplierProductsController@allSupplier_products');
+Route::get('/v1/supply_products/get_1/{id}', 'SupplierProductsController@oneProduct');
+Route::delete('v1/supply_products/delete/{id}', 'SupplierProductsController@permanentDelete'); //this on first permanent 
+Route::delete('v1/supply_products/soft/{id}', 'SupplierProductsController@softDelete');
+Route::get('v2/supply_products/withsoftdelete','SupplierProductsController@Supplier_productsWithSoftDelete');
+Route::get('v2/supply_products/softdeleted','SupplierProductsController@softDeleted');
+Route::patch('/v1/supply_products/restore/{id}','SupplierProductsController@restore');
+Route::delete('v1/supply_products/{id}','SupplierProductsController@permanentDeleteSoftDeleted');
+
 //orders routes
 
 Route::post('/v1/orders', 'OrdersController@create');
@@ -32,7 +45,7 @@ Route::delete('v1/orders/delete/{id}', 'OrdersController@permanentDelete'); //th
 Route::delete('v1/orders/soft/{id}', 'OrdersController@softDelete');
 Route::get('v2/orders/withsoftdelete','OrdersController@suppliersWithSoftDelete');
 Route::get('v2/orders/softdeleted','OrdersController@softDeleted');
-Route::patch('/v1/orders/restore/{id}','SOrdersController@restore');
+Route::patch('/v1/orders/restore/{id}','OrdersController@restore');
 Route::delete('v1/orders/{id}','OrdersController@permanentDeleteSoftDeleted');
 
 // Products Routes

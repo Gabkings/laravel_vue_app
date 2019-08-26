@@ -40,7 +40,7 @@ class SupplierProductsController extends Controller
             $response['data'] = $validator->messages();
             return $response;
         }
-        $supplier_products = $request->isMethod('put') ? Supplier_products::find($request->id) : new Supplier_products;
+        $supplier_products = $request->isMethod('put') ? Supplier_products::findOrFail($request->id) : new Supplier_products;
         $supplier_products->supply_id = $request->supply_id;
         $supplier_products->product_id = $request->product_id;
         $supplier_products->save();

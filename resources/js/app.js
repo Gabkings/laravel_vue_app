@@ -10,6 +10,10 @@ window.Vue = require('vue');
 
 Vue.component('navbar', require('./components/navbar.vue').default);
 Vue.component('products', require('./components/Products.vue').default);
+Vue.component('suppliers', require('./components/Suppliers.vue').default);
+Vue.component('supply_products', require('./components/Supply_products.vue').default);
+Vue.component('orders', require('./components/Orders.vue').default);
+Vue.component('order_details', require('./components/Order_details.vue').default);
 
 const app = new Vue({
   el: '#app'
